@@ -12,6 +12,7 @@ env:
 
 jobs:
   build:
+    environment: fwq  # 必须加上这一行，才能读取 fwq 下的 Secrets
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -50,6 +51,7 @@ jobs:
             ${{ env.DOCKER_IMAGE }}:latest
 
   deploy:
+    environment: fwq  # 这一段也需要加，否则 SSH 登录也会失败
     needs: build
     if: github.ref == 'refs/heads/main' && github.event_name == 'push'
     runs-on: ubuntu-latest
