@@ -14,4 +14,8 @@ public class HealthController {
     public String health(){
         return "服务启动成功！";
     }
+    @GetMapping("/health2")
+    public String health2(){
+        return "服务启动成功2！";
+    }
 }
