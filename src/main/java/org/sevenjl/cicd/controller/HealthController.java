@@ -9,6 +9,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping
 public class HealthController {
+    @GetMapping("/")
+    public String test(){
+        return "欢迎访问CICD流 自动化部署服务器接口 \n 请访问： www.2cd.online ！";
+    }
 
     @GetMapping("/health")
     public String health(){
