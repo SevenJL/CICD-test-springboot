@@ -1,0 +1,8 @@
+services:
+  app:
+    image: ${DOCKER_IMAGE}:${DOCKER_TAG:-latest}
+    ports:
+      - "8080:8080"
+    restart: always
+    environment:
+      - SPRING_PROFILES_ACTIVE=prod
